@@ -1,5 +1,5 @@
 <?php
-
+namespace App;
 /**
  * Une classe correspond à un objet en PHP
  */
@@ -28,8 +28,7 @@ class MaClasse {
      * Méthode setChaine est une méthode qui permet de donner ou modifier une valeur à une propriété.
      * On appelle cette méthode un mutateur ou setter
      *
-     * @param [type] $chaine
-     * @return void
+     * @param string $chaine
      */
     public function setChaine ($chaine) {
         $this->chaine = $chaine;

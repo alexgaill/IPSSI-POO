@@ -1,11 +1,12 @@
 <?php
+namespace App\Animals\Mammifere;
 
-class Chat {
+class Mammifere {
     private $nom;
     private $couleurPelage;
     private $age;
     private $race;
-    private static $cri = "miaou";
+    protected $cri;
 
     /**
      * Les constantes possèdent toujours un nom en majuscule
@@ -20,6 +21,11 @@ class Chat {
         $this->race = $race;
     }
 
+    /**
+     * Retourne la catégorie de l'animal
+     *
+     * @return string
+     */
     public function getCategorie ()
     {
         /**
@@ -30,6 +36,8 @@ class Chat {
 
     /**
      * Get the value of nom
+     * 
+     * @return string
      */
     public function getNom()
     {
@@ -38,6 +46,7 @@ class Chat {
 
     /**
      * Set the value of nom
+     * @param string $nom
      */
     public function setNom($nom): self
     {
@@ -48,6 +57,7 @@ class Chat {
 
     /**
      * Get the value of couleurPelage
+     * @return string
      */
     public function getCouleurPelage()
     {
@@ -56,6 +66,7 @@ class Chat {
 
     /**
      * Set the value of couleurPelage
+     * @param string $couleurPelage
      */
     public function setCouleurPelage(string $couleurPelage): self
     {
@@ -66,6 +77,7 @@ class Chat {
 
     /**
      * Get the value of age
+     * @return int
      */
     public function getAge()
     {
@@ -74,6 +86,7 @@ class Chat {
 
     /**
      * Set the value of age
+     * @param int $age
      */
     public function setAge($age): self
     {
@@ -84,6 +97,7 @@ class Chat {
 
     /**
      * Get the value of race
+     * @return string
      */
     public function getRace()
     {
@@ -92,6 +106,7 @@ class Chat {
 
     /**
      * Set the value of race
+     * @param string $race
      */
     public function setRace($race): self
     {
@@ -102,17 +117,20 @@ class Chat {
 
     /**
      * Get the value of cri
+     * @return string
      */
-    public static function getCri()
+    public function getCri()
     {
-        return self::$cri;
+        return $this->cri;
     }
 
     /**
      * Set the value of race
+     * @param string $cri
      */
-    public static function setCri($cri)
+    public function setCri($cri): self
     {
-        self::$cri = $cri;
+        $this->cri = $cri;
+        return $this;
     }
 }

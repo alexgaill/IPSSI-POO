@@ -1,8 +1,16 @@
 <?php
+namespace App\Content;
 
 class AnimalContent {
 
-    public function createCard($animal) {
+    /**
+     * Créé une card à afficher sur les templates
+     *
+     * @param object $animal
+     * @return string
+     */
+    public function createCard(object $animal) :string
+    {
         return "
         <div class='card' style='width: 18rem;'>
             <img src='https://fakeimg.pl/286x180/?text=". $animal->getNom()."' class='card-img-top' alt='...'>
