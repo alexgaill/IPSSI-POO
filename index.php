@@ -41,7 +41,7 @@ $chien2 = new Chien("Louna", "fauve charbonnée", 9, "Berger de Shetland");
 var_dump($chien2);
 echo "<br>";
 
-$createCard = new AnimalContent();
+$createCard = new App\Content\AnimalContent();
 $animals = [$createCard->createCard($chat1), $createCard->createCard($chat2), $createCard->createCard($chien1), $createCard->createCard($chien2)];
 
 /**
