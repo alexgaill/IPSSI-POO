@@ -40,5 +40,23 @@ echo "<br>";
 $createCard = new AnimalContent();
 $animals = [$createCard->createCard($chat1), $createCard->createCard($chat2), $createCard->createCard($chien1), $createCard->createCard($chien2)];
 
+/**
+ * Appeler une constante d'une class se fait en appelant directement la class sans l'instancier et en utilisant 
+ * l'opérateur de portée ::
+ */
+echo "<br>";
+echo "<br>";
+echo Chat::getCri();
+Chat::setCri("ouaf");
+echo "<br>";
+echo $chat1->getCri();
+echo "<br>";
+echo $chat2->getCri();
+echo "<br>";
+$chat3 = new Chat("Minou", "gris", 3, "Siamois");
+echo    $chat3->getCri();
+echo "<br>";
+echo "<br>";
+echo "<br>";
 
 include "templates/indexView.php";

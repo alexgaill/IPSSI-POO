@@ -5,7 +5,12 @@ class Chat {
     private $couleurPelage;
     private $age;
     private $race;
-    private $cri = "miaou";
+    private static $cri = "miaou";
+
+    /**
+     * Les constantes possèdent toujours un nom en majuscule
+     */
+    const CATEGORIE = "mammifère";
 
     public function __construct(string $nom, string $couleurPelage, int $age, string $race)
     {
@@ -13,6 +18,14 @@ class Chat {
         $this->couleurPelage = $couleurPelage;
         $this->age = $age;
         $this->race = $race;
+    }
+
+    public function getCategorie ()
+    {
+        /**
+         * Pour faire appel à une constantede la class, on faire référence à la class directement avec self
+         */
+        return self::CATEGORIE;
     }
 
     /**
@@ -90,8 +103,16 @@ class Chat {
     /**
      * Get the value of cri
      */
-    public function getCri()
+    public static function getCri()
     {
-        return $this->cri;
+        return self::$cri;
+    }
+
+    /**
+     * Set the value of race
+     */
+    public static function setCri($cri)
+    {
+        self::$cri = $cri;
     }
 }
