@@ -24,6 +24,15 @@ class Database {
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
         ]);
     }
+    /**
+     * Méthode magique appelée à la destruction de la classe
+     *
+     * @return void
+     */
+    public function __destruct()
+    {
+        $this->pdo = null;
+    }
 
     public function getPdo()
     {

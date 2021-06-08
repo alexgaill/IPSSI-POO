@@ -11,6 +11,7 @@ class Article {
     private $user_id;
     private $picture;
     private $upperTitle;
+    // private $test;
 
     public function __construct()
     {
@@ -25,6 +26,20 @@ class Article {
                 $this->$method($value);
             }
         }
+    }
+
+    public function __isset($nomAttribut)
+    {
+        echo "Vous n'avez pas accès à <strong>$nomAttribut</strong>";
+    }
+    public function __get($nomAttribut)
+    {
+        echo "La propriété <strong>$nomAttribut</strong> n'existe pas";
+    }
+
+    public function __call($nom, $param = [])
+    {
+        echo $nom . "=> nom de la méthode";
     }
 
     /**
