@@ -14,7 +14,17 @@ class Article {
 
     public function __construct()
     {
-        $this->upperTitle = strtoupper($this->title);
+        $this->upperTitle = strtoupper($this->getTitle());
+    }
+
+    public function hydrate (array $article)
+    {
+        foreach ($article as $key => $value) {
+            $method = "set". ucfirst($key);
+            if(method_exists($this, $method)){
+                $this->$method($value);
+            }
+        }
     }
 
     /**

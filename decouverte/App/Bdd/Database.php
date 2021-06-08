@@ -25,9 +25,8 @@ class Database {
         ]);
     }
 
-    public function getArticles () 
+    public function getPdo()
     {
-        $query = $this->pdo->query("SELECT * FROM article");
-        return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\Article");
+        return $this->pdo;
     }
 }
