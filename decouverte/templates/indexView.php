@@ -11,11 +11,11 @@
 
 <body>
 
-    <div class="d-flex justify-content-between">
-        <?php foreach ($animals as $animal) {
-            echo $animal;
-        } ?>
-    </div>
+    <ul>
+        <?php foreach ($articles as $value): ?>
+        <li> <?= $value->getUpperTitle() ?></li>
+        <?php endforeach; ?>
+    </ul>
 </body>
 
 </html>

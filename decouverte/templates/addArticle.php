@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action="index.php" class="form" method="POST">
+    <form action="index.php?page=addArticle" class="form" method="POST">
         <div class="form-group">
             <label for="title" class="form-label">Titre:</label>
             <input type="text" class="form-control" name="title" id="title" value="Un super article">
