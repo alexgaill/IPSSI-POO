@@ -1,8 +1,11 @@
 <?php
 namespace App\Animals\Poisson;
 
+use App\Animals\TraitAnimal;
+
 class Poisson
 {
+    use TraitAnimal;
     /**
      * Créer une class poissonRouge (couleur, typePeau, nom, age, dents (boolean))
      * Créer une class requin (couleur, typePeau, nom, age, dents (boolean))

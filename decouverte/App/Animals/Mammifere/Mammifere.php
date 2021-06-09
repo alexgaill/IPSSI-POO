@@ -1,7 +1,11 @@
 <?php
 namespace App\Animals\Mammifere;
 
+use App\Animals\TraitAnimal;
+
 class Mammifere {
+    use TraitAnimal;
+
     private $nom;
     private $couleurPelage;
     private $age;
@@ -132,5 +136,10 @@ class Mammifere {
     {
         $this->cri = $cri;
         return $this;
+    }
+
+    public function cours ()
+    {
+        echo "Le chien se met à courir";
     }
 }

@@ -7,6 +7,8 @@
 > - Autoload: Correction de poisson et mise en place de l'autoload
 > - Database: Révisions et découverte de Fetch Class et de l'hydratation
 > - Manager: Faire sa propre hydration, Manager et Méthodes magiques
+> - Clone: Clonage et réorganisation
+> - Interface: Découverte des interfaces, des traits et du mot clé final
 
 ## Projet par groupe de ~4
 

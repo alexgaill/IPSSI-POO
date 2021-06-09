@@ -9,5 +9,10 @@ class Chien extends Mammifere {
      * @var string
      */
     protected $cri = "Ouaf";
+
+    final public function cours ()
+    {
+        echo "Le chien se met à courir";
+    }
     
 }
