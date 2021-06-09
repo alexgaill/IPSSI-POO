@@ -16,7 +16,7 @@ use App\Manager\ArticleManager;
 // var_dump($article);
 
 // $articleManager = new ArticleManager();
-// // var_dump($articleManager->getArticles());
+// var_dump($articleManager->getArticles());
 // echo "<ul>";
 // foreach ($articleManager->getArticles() as $value) {
 //     echo "<li>".$value->getUpperTitle()."</li>";
@@ -37,3 +37,8 @@ $article = new Article();
     //     $article->test;
     // }
 $article->test();
+
+// $test = "toto";
+// $toto = "Hello World!";
+// echo $$test;
+// =>$"toto";

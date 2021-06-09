@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Exception;
+
 class Article {
 
     private $id;
@@ -12,6 +14,7 @@ class Article {
     private $picture;
     private $upperTitle;
     // private $test;
+   
 
     public function __construct()
     {
@@ -20,12 +23,24 @@ class Article {
 
     public function hydrate (array $article)
     {
+        // if (isset($article["title"])) {
+            // $this->setTitle($article["title"]);
+        // }
+        // $this->setContent($article["content"]);
+        // $this->setCategorieId($article["categorieId"]);
+        // $this->setUserId($article["userId"]);
         foreach ($article as $key => $value) {
             $method = "set". ucfirst($key);
+            // $method = "setTitle";
             if(method_exists($this, $method)){
                 $this->$method($value);
+                // $this->setTitle($value);
             }
         }
+
+        // $propriete = "prop";
+        // Article::$prop
+        // Article::$$propriete
     }
 
     public function __isset($nomAttribut)
@@ -37,9 +52,9 @@ class Article {
         echo "La propriété <strong>$nomAttribut</strong> n'existe pas";
     }
 
-    public function __call($nom, $param = [])
+    public function __call($nom, $param)
     {
-        echo $nom . "=> nom de la méthode";
+        echo $nom . " => nom de la méthode";
     }
 
     /**

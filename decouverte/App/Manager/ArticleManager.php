@@ -1,7 +1,7 @@
 <?php
 namespace App\Manager;
 
-use App\Bdd\Database;
+use Vendor\Database\Database;
 use App\Entity\Article;
 
 class ArticleManager {

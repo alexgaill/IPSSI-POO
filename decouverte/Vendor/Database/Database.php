@@ -1,5 +1,5 @@
 <?php
-namespace App\Bdd;
+namespace Vendor\Database;
 
 // $pdo = new PDO("mysql:host=localhost:8889,dbname=blog", "root", "root", [
 //     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
