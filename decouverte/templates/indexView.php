@@ -3,3 +3,5 @@
         <li> <?= $value->getUpperTitle() ?></li>
         <?php endforeach; ?>
     </ul>
+
+    <?php include "addArticle.php"; ?>

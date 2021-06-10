@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Manager\ArticleManager;
+use CategorieManager;
 use Vendor\Controller\DefaultController;
 
 class ArticleController extends DefaultController{
@@ -35,5 +36,17 @@ class ArticleController extends DefaultController{
     {
         extract($param);
         var_dump($id);
+    }
+
+    public function contact ()
+    {
+        $categorieManager = new CategorieManager();
+        $categories = $categorieManager->getList();
+        $last5 = $this->manager->getLast5();
+
+        $this->render("accueil", [
+            "articles" => $last5,
+            "categories" => $categories
+        ]);
     }
 }
