@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Interfaces;
+namespace App\Interfaces;
 
 interface ManagerInterface {
 
@@ -8,7 +8,7 @@ interface ManagerInterface {
 
     public function getList();
 
-    public function getOne();
+    public function getOne(int $id);
 
     public function update();
 

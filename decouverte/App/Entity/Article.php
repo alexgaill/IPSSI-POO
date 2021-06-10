@@ -3,8 +3,12 @@
 namespace App\Entity;
 
 use Exception;
+use Vendor\Entity\Entity;
 
-class Article {
+/**
+ * @table article
+ */
+class Article extends Entity {
 
     private $id;
     private $title;
@@ -19,28 +23,6 @@ class Article {
     public function __construct()
     {
         $this->upperTitle = strtoupper($this->getTitle());
-    }
-
-    public function hydrate (array $article)
-    {
-        // if (isset($article["title"])) {
-            // $this->setTitle($article["title"]);
-        // }
-        // $this->setContent($article["content"]);
-        // $this->setCategorieId($article["categorieId"]);
-        // $this->setUserId($article["userId"]);
-        foreach ($article as $key => $value) {
-            $method = "set". ucfirst($key);
-            // $method = "setTitle";
-            if(method_exists($this, $method)){
-                $this->$method($value);
-                // $this->setTitle($value);
-            }
-        }
-
-        // $propriete = "prop";
-        // Article::$prop
-        // Article::$$propriete
     }
 
     public function __isset($nomAttribut)

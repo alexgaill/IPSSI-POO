@@ -1,7 +1,9 @@
 <?php
 namespace App\Entity;
 
-class Categorie {
+use Vendor\Entity\Entity;
+
+class Categorie extends Entity{
 
     /**
      * id de la catégorie

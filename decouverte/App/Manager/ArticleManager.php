@@ -1,14 +1,22 @@
 <?php
 namespace App\Manager;
 
-use App\Entity\Article;
 use Vendor\Manager\Manager;
 
+/**
+ * @method array getList() | retourne la liste des articles
+ * @method object getOne(int $id) | retourne un article
+ */
 class ArticleManager extends Manager{
 
     protected $db;
     protected $table = "article";
 
+    /**
+     * Sauvegarder un article dans la BDD
+     *
+     * @param Article $article
+     */
     public function create ($article)
     {
         $statement = "INSERT INTO article (title, content, categorie_id, user_id) 
@@ -22,18 +30,6 @@ class ArticleManager extends Manager{
 
         $prepare->execute();
     }
-
-    public function getOne()
-    {
-
-    }
-
-    public function update()
-    {
-
-    }
-    public function delete()
-    {
-        
-    }
+    public function update(){}
+    public function delete(){}
 }

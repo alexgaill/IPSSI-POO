@@ -2,8 +2,8 @@
 namespace Vendor\Manager;
 
 use Vendor\Database\Database;
-use Vendor\Interfaces\GlobalInterface;
-use Vendor\Interfaces\ManagerInterface;
+use App\Interfaces\GlobalInterface;
+use App\Interfaces\ManagerInterface;
 
 abstract class Manager implements ManagerInterface, GlobalInterface{
 
@@ -19,13 +19,28 @@ abstract class Manager implements ManagerInterface, GlobalInterface{
 
     // public abstract function create($article);
 
-    public function getList()
+    /**
+     * Return list of elements
+     *
+     * @return array
+     */
+    public function getList() :array
     {
         $query = $this->db->query("SELECT * FROM $this->table");
         return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\\".ucfirst($this->table));
     }
 
-    // public abstract function getOne();
+    /**
+     * return one element
+     *
+     * @param int $id
+     * @return object
+     */
+    public function getOne(int $id)
+    {
+        $query = $this->db->query("SELECT * FROM $this->table WHERE id= $id");
+        return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\\".ucfirst($this->table));
+    }
 
     // public abstract function update();
 

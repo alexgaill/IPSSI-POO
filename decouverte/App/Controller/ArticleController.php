@@ -3,8 +3,9 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Manager\ArticleManager;
+use Vendor\Controller\DefaultController;
 
-class ArticleController {
+class ArticleController extends DefaultController{
 
     public function __construct()
     {
@@ -14,7 +15,9 @@ class ArticleController {
     public function home()
     {
         $articles = $this->manager->getList();
-        include ROOT."/templates/indexView.php";
+        $this->render("indexView", [
+            "articles" => $articles
+        ]);
     }
 
     public function addArticle(/* $data */)
@@ -23,14 +26,13 @@ class ArticleController {
             $article = new Article();
             $article->hydrate($_POST);
             $this->manager->create($article);
-            header("Location:index.php?page=home");
+            $this->redirectToRoute("home");
         }
-        include ROOT."/templates/addArticle.php";
+        $this->render("addArticle");
     }
 
     public function test ($param)
     {
-        var_dump($param);
         extract($param);
         var_dump($id);
     }

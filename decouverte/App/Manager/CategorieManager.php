@@ -3,6 +3,10 @@
 use App\Entity\Categorie;
 use Vendor\Manager\Manager;
 
+/**
+ * @method array getList() | retourne la liste des catégories
+ * @method object getOne(int $id) | retourne une catégorie
+ */
 class CategorieManager extends Manager{
     protected $db;
     protected $table = "categorie";
@@ -17,8 +21,6 @@ class CategorieManager extends Manager{
 
         $prepare->execute();
     }
-
-    public function getOne(){}
 
     public function update(){}
 

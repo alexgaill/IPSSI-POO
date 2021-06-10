@@ -1,0 +1,11 @@
+Design Pattern Singleton
+
+Empêcher d'instancier plusieurs fois une class
+Instance unique dans la class en question
+
+1- construct en private
+2- créer une methode qui vérifie si la class est instanciée ou non. 
+    Si non, on instancie la class et on la stocke dans $_instance | on retourne $_instance
+3- $_instance contient l'instance de la class
+4- On appelle la méthode qui va retourner $_instance en static 
+5- __clone pour bloquer la copie (ou simplement retourner $_instance (à éviter car on doit empêcher les reproductions de l'instance))

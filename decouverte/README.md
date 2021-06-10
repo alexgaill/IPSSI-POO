@@ -10,6 +10,7 @@
 > - Clone: Clonage et réorganisation
 > - Interface: Découverte des interfaces, des traits et du mot clé final
 > - Routeur: Mise en place d'un routeur simple et d'un routeur plus précis
+> - MVC: Organisation du projet avec l'architecture MVC
 
 ## Projet par groupe de ~4
 

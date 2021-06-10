@@ -4,8 +4,7 @@ namespace App\Traits;
 use App\Animals\TraitAnimal;
 
 class Test extends TestParent{
-    use TestTrait;
-    use TraitAnimal;
+    use TestTrait, TraitAnimal;
 
     // public function hello()
     // {
